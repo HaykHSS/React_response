@@ -29,12 +29,12 @@ const Footer = () => {
           src="/logo.svg"
           alt="logo"
         />
-        <h3 className="text-[#333333] lg:text-4xl md:text-3xl sm:text-lg text-base ">
+        <h3 className="text-[#333333] lg:text-4xl md:text-3xl sm:text-lg text-sm ">
           One of the best furniture agency.
         </h3>
       </div>
       <div className="flex flex-col">
-        <div className="flex lg:gap-[10px] md:gap-2 gap-1 items-center lg:mb-4 md:mb-3 mb-1">
+        <div className="flex lg:gap-[10px] md:gap-2 gap-1 items-center lg:mb-4 md:mb-3 mb-0">
           <div className="rounded-full lg:w-[14px] md:w-[12px] sm:w-[10px] w-2 aspect-square bg-[#333333]"></div>
           <span className="text-[#333333] lg:text-lg md:text-base sm:text-sm text-xs whitespace-nowrap">
             Enter your email to get the latest news
