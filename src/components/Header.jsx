@@ -10,16 +10,16 @@ const Header = () => {
       />
       <nav className="ml-auto xl:mr-[74px] lg:mr-[64px] md:mr-[48px] mr-[12px]">
         <ul className="flex xl:text-base lg:text-sm text-[10px] text-[#333] xl:gap-[74px] lg:gap-[64px] md:gap-[48px] gap-[8px]">
-          <li className="hover:text-[#918e8e]">
+          <li className="lg:hover:text-[#918e8e]">
             <a href="">Home</a>
           </li>
-          <li className="hover:text-[#918e8e]">
+          <li className="lg:hover:text-[#918e8e]">
             <a href="">About Us</a>
           </li>
-          <li className="hover:text-[#918e8e]">
+          <li className="lg:hover:text-[#918e8e]">
             <a href="">Services</a>
           </li>
-          <li className="font-semibold hover:text-[#918e8e]">
+          <li className="font-semibold lg:hover:text-[#918e8e]">
             <a href="">Our Teams</a>
           </li>
         </ul>
