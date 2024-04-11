@@ -8,8 +8,8 @@ const Header = () => {
         src="/logo.svg"
         alt="Logo"
       />
-      <nav className="ml-auto xl:mr-[74px] lg:mr-[64px] md:mr-[48px] mr-[30px]">
-        <ul className="flex xl:text-base lg:text-sm text-xs text-[#333] xl:gap-[74px] lg:gap-[64px] md:gap-[48px] gap-[24px]">
+      <nav className="ml-auto xl:mr-[74px] lg:mr-[64px] md:mr-[48px] mr-[12px]">
+        <ul className="flex xl:text-base lg:text-sm text-[10px] text-[#333] xl:gap-[74px] lg:gap-[64px] md:gap-[48px] gap-[8px]">
           <li className="hover:text-[#918e8e]">
             <a href="">Home</a>
           </li>
