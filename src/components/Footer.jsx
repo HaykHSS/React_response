@@ -37,7 +37,7 @@ const Footer = () => {
         <div className="flex lg:gap-[10px] md:gap-2 gap-1 items-center lg:mb-4 md:mb-3 mb-1">
           <div className="rounded-full lg:w-[14px] md:w-[12px] sm:w-[10px] w-2 aspect-square bg-[#333333]"></div>
           <span className="text-[#333333] lg:text-lg md:text-base sm:text-sm text-xs whitespace-nowrap">
-            Enter your email to get the laterst news
+            Enter your email to get the latest news
           </span>
         </div>
         <div className="relative mt-5 lg:mb-10 md:mb-8 mb-6">
