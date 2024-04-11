@@ -1,7 +1,7 @@
 const Descriptions = () => {
   return (
     <section className="flex flex-col md:flex-row lg:gap-8 md:gap-6 gap-4 items-center px-2 sm:px-12 md:px-12 lg:px-20 xl:px-[120px] lg:mt-14 md:mt-10 mt-6">
-      <div className="flex flex-col text-[#9C9C9C] self-stretch">
+      <div className="flex flex-col text-[#9C9C9C] self-stretch md:basis-1/2">
         <h2 className="md:mb-6 mb-4 text-[#333] lg:text-2xl md:text-xl text:lg font-semibold">
           Project Overview
         </h2>
@@ -20,7 +20,7 @@ const Descriptions = () => {
           </span>
         </div>
       </div>
-      <div className="flex flex-col text-[#9C9C9C]">
+      <div className="flex flex-col text-[#9C9C9C] md:basis-1/2">
         <h2 className="md:mb-6 mb-4 text-[#333] lg:text-2xl md:text-xl text:lg font-semibold">
           Design Process
         </h2>
