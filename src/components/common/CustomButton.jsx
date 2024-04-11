@@ -17,5 +17,5 @@ const CustomButton = ({ type = "blue" }) => {
 export default CustomButton;
 
 CustomButton.propTypes = {
-  type: PropTypes.oneOf(["white", "blue"]), // Define the expected prop types
+  type: PropTypes.oneOf(["white", "blue"]),
 };

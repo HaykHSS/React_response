@@ -1,4 +1,26 @@
+import { useState } from "react";
+import debounce from 'lodash.debounce';
+import clsx from "clsx";
+
 const Footer = () => {
+  const [email, setEmail] = useState("");
+  const [isValid, setIsValid] = useState(false);
+
+  const validateEmail = (value) => {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(value);
+  };
+
+  const debouncedValidateEmail = debounce((value) => {
+    setIsValid(validateEmail(value));
+  }, 500);
+
+  const handleChange = (e) => {
+    const { value } = e.target;
+    setEmail(value);
+    debouncedValidateEmail(value);
+  };
+
   return (
     <footer className="flex gap-8 px-2 sm:px-12 md:px-12 lg:px-20 xl:px-[120px] py-8 sm:py-10 md:py-12 lg:py-16 xl:py-[84px] items-center justify-between">
       <div className="max-w-[480px]">
@@ -20,35 +42,64 @@ const Footer = () => {
         </div>
         <div className="relative mt-5 lg:mb-10 md:mb-8 mb-6">
           <input
-            className="placeholder:text-[#D9D9D9] w-full pr-8 outline-none lg:text-base md:text-sm text-xs"
+            onChange={handleChange}
+            className={clsx('placeholder:text-[#D9D9D9] w-full pr-8 outline-none lg:text-base md:text-sm text-xs rounded-sm',{
+              "focus:outline-red-500": !isValid,
+              "focus:outline-green-500": isValid && email
+            })}
             placeholder="Email Address"
             type="email"
             name="email"
             id="email"
+            value={email}
           />
           <img
-            className="ml-[-10px] absolute top-1/2 -translate-y-1/2 right-0"
+            className="ml-[-10px] absolute top-1/2 -translate-y-1/2 right-0 lg:hover:cursor-pointer"
             src="/arrow.svg"
             alt="arrow"
           />
-          <div className="absolute lg:bottom-[-8px] md:bottom-[-6px] bottom-[-2px] w-full h-[2px] bg-[#141414]"></div>
+          <div className="absolute lg:bottom-[-8px] bottom-[-6px] w-full h-[2px] bg-[#141414]"></div>
         </div>
         <div className=" inline-flex flex-col gap-[11px] self-end">
           <span className="text-[#333333] lg:text-base text-sm">
             Follow us On
           </span>
           <div className="flex lg:gap-[25px] md:gap-5 gap-4">
-            <div className="w-[32px] h-[32px] flex items-center justify-center cursor-pointer bg-[#D9D9D9] rounded-full">
-              <img src="/social/facebook.svg" alt="facebook" />
+            <div className="w-[32px] h-[32px] flex items-center justify-center cursor-pointer bg-[#D9D9D9] lg:hover:bg-[#a19f9f] rounded-full">
+              <a
+                href="https://www.facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="/social/facebook.svg" alt="facebook" />
+              </a>
             </div>
-            <div className="w-[32px] h-[32px] flex items-center justify-center cursor-pointer bg-[#D9D9D9] rounded-full">
-              <img src="/social/instagram.svg" alt="facebook" />
+            <div className="w-[32px] h-[32px] flex items-center justify-center cursor-pointer bg-[#D9D9D9] lg:hover:bg-[#a19f9f] rounded-full">
+              <a
+                href="https://www.instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="/social/instagram.svg" alt="facebook" />
+              </a>
             </div>
-            <div className="w-[32px] h-[32px] flex items-center justify-center cursor-pointer bg-[#D9D9D9] rounded-full">
-              <img src="/social/tiktok.svg" alt="facebook" />
+            <div className="w-[32px] h-[32px] flex items-center justify-center cursor-pointer bg-[#D9D9D9] lg:hover:bg-[#a19f9f] rounded-full">
+              <a
+                href="https://www.tiktok.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="/social/tiktok.svg" alt="facebook" />
+              </a>
             </div>
-            <div className="w-[32px] h-[32px] flex items-center justify-center cursor-pointer bg-[#D9D9D9] rounded-full">
-              <img src="/social/youtube.svg" alt="facebook" />
+            <div className="w-[32px] h-[32px] flex items-center justify-center cursor-pointer bg-[#D9D9D9] lg:hover:bg-[#a19f9f] rounded-full">
+              <a
+                href="https://www.youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="/social/youtube.svg" alt="facebook" />
+              </a>
             </div>
           </div>
         </div>
