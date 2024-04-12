@@ -12,7 +12,7 @@ const CustomButton = ({ type = "blue" }) => {
         {
           "bg-[#2C3878] text-white lg:hover:bg-[#6873b0]": type === "blue",
           "bg-white self-start lg:hover:bg-[#b8b8bc]": type === "white",
-          "ml-auto": device === "mobile",
+          "ml-auto": device === "mobile" && type === "white",
         }
       )}
     >
