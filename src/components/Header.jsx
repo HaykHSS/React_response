@@ -1,6 +1,20 @@
 import CustomButton from "./common/CustomButton";
+import { detectDevice } from "../helpers/detectDevice";
+import CustomNavbar from "./common/CustomNavbar";
+import { useState } from "react";
 
 const Header = () => {
+  const device = detectDevice();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClose = () => {
+    setIsOpen(false);
+  }
+
+  const handleOpen = () => {
+    setIsOpen(true);
+  }
+
   return (
     <header className="flex px-2 sm:px-12 md:px-12 lg:px-20 xl:px-[120px] py-2 sm:py-4 md:py-6 lg:py-8 xl:py-[42px] items-center">
       <img
@@ -8,23 +22,25 @@ const Header = () => {
         src="/logo.svg"
         alt="Logo"
       />
-      <nav className="ml-auto xl:mr-[74px] lg:mr-[64px] md:mr-[48px] mr-[12px]">
-        <ul className="flex xl:text-base lg:text-sm text-[10px] text-[#333] xl:gap-[74px] lg:gap-[64px] md:gap-[48px] gap-[8px]">
-          <li className="lg:hover:text-[#918e8e]">
-            <a href="">Home</a>
-          </li>
-          <li className="lg:hover:text-[#918e8e]">
-            <a href="">About Us</a>
-          </li>
-          <li className="lg:hover:text-[#918e8e]">
-            <a href="">Services</a>
-          </li>
-          <li className="font-semibold lg:hover:text-[#918e8e]">
-            <a href="">Our Teams</a>
-          </li>
-        </ul>
-      </nav>
+      <CustomNavbar isOpen={isOpen} handleClose={handleClose} />
       <CustomButton type="blue" />
+      {device === "mobile" && (
+        <>
+          <img
+            onClick={handleOpen}
+            width={16}
+            height={16}
+            className="ml-4 cursor-pointer"
+            src="/burger.svg"
+            alt="burger"
+          />
+          {isOpen && (
+            <button onClick={handleClose} className="absolute top-4 right-4 text-lg text-white cursor-pointer">
+              X
+            </button>
+          )}
+        </>
+      )}
     </header>
   );
 };
