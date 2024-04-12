@@ -39,7 +39,7 @@ const CustomNavbar = ({ isOpen, handleClose }) => {
         {isOpen && (
           <button
             onClick={handleClose}
-            className="absolute top-0 right-0 text-lg text-white cursor-pointer"
+            className="absolute top-4 right-4 text-xl text-white cursor-pointer"
           >
             X
           </button>
