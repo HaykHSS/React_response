@@ -1,9 +1,10 @@
 import CustomButton from "./common/CustomButton";
 import { detectDevice } from "../helpers/detectDevice";
 import CustomNavbar from "./common/CustomNavbar";
-import PropTypes from "prop-types";
+import { useState } from "react";
 
-const Header = ({ isOpen, setIsOpen }) => {
+const Header = () => {
+  const [isOpen , setIsOpen] = useState(false);
   const device = detectDevice();
 
   const handleClose = () => {
@@ -47,8 +48,3 @@ const Header = ({ isOpen, setIsOpen }) => {
   );
 };
 export default Header;
-
-Header.propTypes = {
-  isOpen: PropTypes.bool,
-  setIsOpen: PropTypes.func,
-};
