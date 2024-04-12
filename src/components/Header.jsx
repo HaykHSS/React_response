@@ -1,19 +1,18 @@
 import CustomButton from "./common/CustomButton";
 import { detectDevice } from "../helpers/detectDevice";
 import CustomNavbar from "./common/CustomNavbar";
-import { useState } from "react";
+import PropTypes from "prop-types";
 
-const Header = () => {
+const Header = ({ isOpen, setIsOpen }) => {
   const device = detectDevice();
-  const [isOpen, setIsOpen] = useState(false);
 
   const handleClose = () => {
     setIsOpen(false);
-  }
+  };
 
   const handleOpen = () => {
     setIsOpen(true);
-  }
+  };
 
   return (
     <header className="flex px-2 sm:px-12 md:px-12 lg:px-20 xl:px-[120px] py-2 sm:py-4 md:py-6 lg:py-8 xl:py-[42px] items-center">
@@ -35,7 +34,10 @@ const Header = () => {
             alt="burger"
           />
           {isOpen && (
-            <button onClick={handleClose} className="absolute top-4 right-4 text-lg text-white cursor-pointer">
+            <button
+              onClick={handleClose}
+              className="absolute top-4 right-4 text-lg text-white cursor-pointer"
+            >
               X
             </button>
           )}
@@ -45,3 +47,8 @@ const Header = () => {
   );
 };
 export default Header;
+
+Header.propTypes = {
+  isOpen: PropTypes.bool,
+  setIsOpen: PropTypes.func,
+};

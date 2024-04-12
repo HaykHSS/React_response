@@ -22,7 +22,7 @@ const CustomNavbar = ({ isOpen }) => {
       </ul>
     </nav>
   ) : isOpen ? (
-    <nav className="h-dvh z-50 inset-0 bg-black opacity-90">
+    <nav className="fixed z-50 inset-0 bg-black opacity-90">
       <ul className="flex h-full flex-col text-2xl  text-[#f3f3f3] gap-10 justify-center items-center">
         <li>
           <a href="">Home</a>
