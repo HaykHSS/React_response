@@ -1,7 +1,7 @@
 import { detectDevice } from "../../helpers/detectDevice";
 import PropTypes from "prop-types";
 
-const CustomNavbar = ({ isOpen }) => {
+const CustomNavbar = ({ isOpen, handleClose }) => {
   const device = detectDevice();
 
   return device !== "mobile" ? (
@@ -23,7 +23,7 @@ const CustomNavbar = ({ isOpen }) => {
     </nav>
   ) : isOpen ? (
     <nav className="fixed z-50 h-lvh top-0 left-0 right-0 bg-black opacity-90">
-      <ul className="flex h-full flex-col text-2xl  text-[#f3f3f3] gap-10 justify-center items-center">
+      <ul className="relative flex h-full flex-col text-2xl  text-[#f3f3f3] gap-10 justify-center items-center">
         <li>
           <a href="">Home</a>
         </li>
@@ -36,6 +36,14 @@ const CustomNavbar = ({ isOpen }) => {
         <li>
           <a href="">Our Teams</a>
         </li>
+        {isOpen && (
+          <button
+            onClick={handleClose}
+            className="absolute top-0 right-0 text-lg text-white cursor-pointer"
+          >
+            X
+          </button>
+        )}
       </ul>
     </nav>
   ) : (
@@ -46,4 +54,5 @@ export default CustomNavbar;
 
 CustomNavbar.propTypes = {
   isOpen: PropTypes.bool,
+  handleClose: PropTypes.func,
 };

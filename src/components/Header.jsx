@@ -4,7 +4,7 @@ import CustomNavbar from "./common/CustomNavbar";
 import { useState } from "react";
 
 const Header = () => {
-  const [isOpen , setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const device = detectDevice();
 
   const handleClose = () => {
@@ -25,7 +25,6 @@ const Header = () => {
       <CustomNavbar isOpen={isOpen} handleClose={handleClose} />
       <CustomButton type="blue" />
       {device === "mobile" && (
-        <>
           <img
             onClick={handleOpen}
             width={16}
@@ -34,15 +33,6 @@ const Header = () => {
             src="/burger.svg"
             alt="burger"
           />
-          {isOpen && (
-            <button
-              onClick={handleClose}
-              className="absolute top-4 right-4 text-lg text-white cursor-pointer"
-            >
-              X
-            </button>
-          )}
-        </>
       )}
     </header>
   );
