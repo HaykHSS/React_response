@@ -2,5 +2,23 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended"
+  ],
+  "automerge": true,
+  "automergeType": "pr",  // You can use "branch" if you prefer direct branch merges
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch"],  // Auto-merge minor and patch updates for all dependencies
+      "automerge": true,
+      "labels": ["automerge"]  // Add 'automerge' label to auto-merged PRs
+    },
+    {
+      "matchDepTypes": ["dependencies", "devDependencies", "peerDependencies", "optionalDependencies"],  // Auto-merge for all types of dependencies
+      "automerge": true,
+      "labels": ["automerge"]  // Add 'automerge' label to auto-merged PRs
+    },
+    {
+      "matchUpdateTypes": ["major"],  // Do not auto-merge major version updates
+      "automerge": false
+    }
   ]
 }
