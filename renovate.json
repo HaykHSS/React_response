@@ -15,10 +15,6 @@
       "matchDepTypes": ["dependencies", "devDependencies", "peerDependencies", "optionalDependencies"],  // Auto-merge for all types of dependencies
       "automerge": true,
       "labels": ["automerge"]  // Add 'automerge' label to auto-merged PRs
-    },
-    {
-      "matchUpdateTypes": ["major"],  // Do not auto-merge major version updates
-      "automerge": false
     }
   ]
 }
