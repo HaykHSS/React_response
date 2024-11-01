@@ -12,7 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check PR Title for Exclusion
-        id: check_pr_title
         run: |
           PR_TITLE="${{ github.event.pull_request.title }}"
           if [[ "$PR_TITLE" =~ (^|[[:space:]])[Aa][Uu][Tt][Oo][Mm][Ee][Rr][Gg][Ee]([[:space:]]|$) ]]; then
