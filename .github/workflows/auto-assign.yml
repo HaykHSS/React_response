@@ -15,7 +15,7 @@ jobs:
         id: check_pr_title
         run: |
           PR_TITLE="${{ github.event.pull_request.title }}"
-          if [[ "$PR_TITLE" =~ [Aa][Uu][Tt][Oo][Mm][Ee][Rr][Gg][Ee] ]]; then
+          if [[ "$PR_TITLE" =~ \b[Aa][Uu][Tt][Oo][Mm][Ee][Rr][Gg][Ee]\b ]]; then
             echo "excluded=true" >> $GITHUB_ENV
           else
             echo "excluded=false" >> $GITHUB_ENV
