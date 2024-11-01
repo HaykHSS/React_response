@@ -21,7 +21,7 @@ numberOfReviewers: 0
 # Uses numberOfReviewers if unset.
 # numberOfAssignees: 2
 
-A list of keywords to be skipped the process that add reviewers if pull requests include it
+# A list of keywords to be skipped the process that add reviewers if pull requests include it
 skipKeywords:
   - wip
   - tandz
