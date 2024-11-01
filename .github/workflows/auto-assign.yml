@@ -16,13 +16,13 @@ jobs:
         run: |
           PR_TITLE="${{ github.event.pull_request.title }}"
           if [[ "$PR_TITLE" =~ (^|[[:space:]])[Aa][Uu][Tt][Oo][Mm][Ee][Rr][Gg][Ee]([[:space:]]|$) ]]; then
-            echo "excluded=true" >> $GITHUB_ENV
+            echo "runAutoAssign=true" >> $GITHUB_ENV
           else
-            echo "excluded=false" >> $GITHUB_ENV
+            echo "runAutoAssign=false" >> $GITHUB_ENV
           fi
 
       - name: Run Auto-Assign
-        if: env.excluded == 'false'
+        if: env.runAutoAssign == 'true'
         uses: kentaro-m/auto-assign-action@v2.0.0
         with:
           configuration-path: ".github/auto-assign-config.yml"
