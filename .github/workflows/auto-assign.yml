@@ -16,9 +16,9 @@ jobs:
         run: |
           PR_TITLE="${{ github.event.pull_request.title }}"
           if [[ "$PR_TITLE" =~ (^|[[:space:]])[Aa][Uu][Tt][Oo][Mm][Ee][Rr][Gg][Ee]([[:space:]]|$) ]]; then
-            echo "runAutoAssign=true" >> $GITHUB_ENV
-          else
             echo "runAutoAssign=false" >> $GITHUB_ENV
+          else
+            echo "runAutoAssign=true" >> $GITHUB_ENV
           fi
 
       - name: Run Auto-Assign
